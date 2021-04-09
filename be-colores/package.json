@@ -1,0 +1,30 @@
+{
+    "name": "bff-mercado-libre",
+    "version": "1.0.0",
+    "description": "BFF App MercadoLibre",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/parraSebastian91/bff-mercado-libre.git"
+    },
+    "author": "Sebastian Parra",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/parraSebastian91/bff-mercado-libre/issues"
+    },
+    "homepage": "https://github.com/parraSebastian91/bff-mercado-libre#readme",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.12.3",
+        "node-env-file": "^0.1.8"
+    }
+}
