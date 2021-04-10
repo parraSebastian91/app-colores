@@ -1,4 +1,4 @@
-var router = require('express').Router();
+const router = require('express').Router();
 const Color = require('../models/models').color;
 const colorController = require('../controller/colorController');
 
@@ -16,9 +16,14 @@ router.get('/test', (req, res) => {
 router.get('', async (req, res) => {
     colorController.getListColores(req.query)
         .then(t => {
-            res.send(t)
+            if (req.query.doc === 'xml') {
+                res.set('Content-Type', 'text/xml');
+                res.send(t);
+            } else {
+                res.send(t);
+            }
         }).catch(err => {
-            res.send(t)
+            res.send(err)
         });
 })
 

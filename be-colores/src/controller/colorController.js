@@ -1,19 +1,68 @@
 const Color = require('../models/models').color;
+const xml = require('xml');
 
 /**
  * @name getListColores
  * @returns Obtiene Lista de Colores
  */
 
-const getListColores = ({ limit = 0, skip = 0 }) => {
-    const limite = parseInt(limit);
-    const salto = parseInt(skip);
+const getListColores = async ({ limite = 5, pagina = 1, doc = 'json' }) => {
+    const limit = parseInt(limite);
+    const pag = parseInt(pagina);
     const resp = new Promise((resolve, reject) => {
+        let obj = 0;
         Color.find()
-            .skip(salto)
-            .limit(limite)
+            .skip(pag)
+            .limit(limit)
+            .sort('id')
             .then(t => {
-                resolve(t)
+                if (doc === 'xml') {
+                    Color.count().then(t2 => {
+                        const listaColores = [
+                            {
+                                pagination:
+                                    [
+                                        { pp: limit },
+                                        { page: pag },
+                                        { total: t2 }
+                                    ]
+                            },
+                            {
+                                listaColores: t.map(m => {
+                                    return {
+                                        color: [{ id: m.id },
+                                        { name: m.name },
+                                        { color: m.color },
+                                        { pantone: m.pantone },
+                                        { year: m.year },]
+                                    }
+                                })
+                            }
+                        ];
+                        resolve(xml(listaColores));
+                    });
+
+                } else {
+                    Color.count().then(t2 => {
+                        const respuesta = {
+                            pagination: {
+                                pp: limit,
+                                page: pag,
+                                total: t2
+                            },
+                            items: t.map(m => {
+                                return {
+                                    id: m.id,
+                                    name: m.name,
+                                    color: m.color,
+                                    pantone: m.pantone,
+                                    year: m.year,
+                                }
+                            })
+                        }
+                        resolve(respuesta);
+                    });
+                }
             }).catch(err => {
                 reject(err)
             });

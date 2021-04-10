@@ -4,7 +4,7 @@ const authController = require('../controller/authController');
 /**
  * GetToken
  */
-router.get('/getToken', (req, res) => {
+router.post('/getToken', (req, res) => {
     const item = req.body;
     authController.createToken(item)
         .then(t => {
