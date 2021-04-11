@@ -93,8 +93,9 @@ export class CardColorComponent implements OnInit {
   }
 
   clickColor() {
+    console.log(this.color)
     const modalColor = this.dialog.open(ColorModalComponent, {
-      width: '250px',
+      width: '450px',
       data: this.color
     });
     modalColor.afterClosed().subscribe(result => {
