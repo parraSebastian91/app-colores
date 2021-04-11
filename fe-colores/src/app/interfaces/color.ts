@@ -1,7 +1,7 @@
 export interface Color {
     id: Number;
-    name: String;
-    color: String;
-    pantone: String;
-    year: String;
+    name: string;
+    color: string;
+    pantone: string;
+    year: string;
 }

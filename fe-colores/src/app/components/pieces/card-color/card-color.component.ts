@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { ColorModalComponent } from '../../modals/color-modal/color-modal.component';
@@ -54,6 +54,8 @@ import { ColorModalComponent } from '../../modals/color-modal/color-modal.compon
 })
 export class CardColorComponent implements OnInit {
   @Input() color: any;
+  @Output() eventoEjecutado = new EventEmitter();
+
   ngStyle = {}
   estadoLogin = 'inicio';
   estadoSpinner = 'inicio';
@@ -93,13 +95,13 @@ export class CardColorComponent implements OnInit {
   }
 
   clickColor() {
-    console.log(this.color)
     const modalColor = this.dialog.open(ColorModalComponent, {
       width: '450px',
-      data: this.color
+      data: this.color,
+      disableClose: true
     });
     modalColor.afterClosed().subscribe(result => {
-      console.log('Se Ha Cerrado')
+      this.eventoEjecutado.emit(result);
     });
   }
 

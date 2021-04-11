@@ -28,13 +28,13 @@
 <mat-dialog-actions>
     <div class="acciones">
         <div>
-            <button mat-mini-fab color="warn" align="start">
+            <button mat-mini-fab color="warn" *ngIf="!isNew" (click)="eliminar()">
                 <mat-icon aria-hidden="false" aria-label="Example delete_outline icon">delete_outline</mat-icon>
             </button>
         </div>
         <div>
             <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-button [mat-dialog-close]="true" cdkFocusInitial form="ngForm"
+            <button mat-button cdkFocusInitial form="ngForm"
                 (click)="colorForm.onSubmit(undefined)">Guardar</button>
         </div>
     </div>

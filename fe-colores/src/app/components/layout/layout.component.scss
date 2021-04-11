@@ -26,4 +26,15 @@ $fondoCajasDefault: rgb(206, 206, 206);
             padding: 10px;
         }
     }
+    .layout-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.btn-add{
+    background: #00c119;
+    color: white;
 }

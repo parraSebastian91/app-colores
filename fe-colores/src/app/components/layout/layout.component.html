@@ -1,15 +1,23 @@
-<div class="body" >
+<div class="body">
     <div class="encabezado">
         <span class="titulo">Colores</span>
     </div>
     <div class="contenedor">
         <div class="color-card" *ngFor="let color of colorList">
-            <app-card-color [color]="color"></app-card-color>
+            <app-card-color [color]="color" (eventoEjecutado)="mensaje($event)"></app-card-color>
         </div>
     </div>
-    <div>
-        <mat-paginator (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize"
-            [showFirstLastButtons]="showFirstLastButtons" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex">
-        </mat-paginator>
+    <div class="layout-footer">
+        <div>
+            <button mat-mini-fab class="btn-add" (click)="agregarColor()">
+                <mat-icon aria-hidden="false" aria-label="Example delete_outline icon">add</mat-icon>
+            </button>
+        </div>
+        <div>
+            <mat-paginator (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize"
+                [showFirstLastButtons]="showFirstLastButtons" [pageSizeOptions]="pageSizeOptions"
+                [pageIndex]="pageIndex">
+            </mat-paginator>
+        </div>
     </div>
 </div>

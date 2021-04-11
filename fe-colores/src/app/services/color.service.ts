@@ -18,4 +18,22 @@ export class ColorService {
     return request;
   }
 
+  setColor(color: Color){
+    const path = `${this.url}/colores`;
+    const request =  this.http.post(path,color).toPromise();
+    return request;
+  }
+
+  updColor(color: Color){
+    const path = `${this.url}/colores/${color.id}`;
+    const request =  this.http.put(path,color).toPromise();
+    return request;
+  }
+
+  deleteColor(color: Color){
+    const path = `${this.url}/colores/${color.id}`;
+    const request =  this.http.delete(path).toPromise();
+    return request;
+  } 
+
 }
