@@ -12,6 +12,12 @@
             <button mat-mini-fab class="btn-add" (click)="agregarColor()">
                 <mat-icon aria-hidden="false" aria-label="Example delete_outline icon">add</mat-icon>
             </button>
+            <button mat-raised-button color="primary" (click)="setAdministrador()">
+                Administrador
+            </button>
+            <button mat-raised-button color="primary" (click)="setUsuario()">
+                Usuario
+            </button>
         </div>
         <div>
             <mat-paginator (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize"

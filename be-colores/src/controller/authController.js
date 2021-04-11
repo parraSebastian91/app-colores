@@ -36,7 +36,7 @@ const createToken = (usuario) => {
                 resolve({ token: jwt.sign(persona, process.env.secret), cod: 200 })
             })
             .catch(err => {
-                reject({ cod: 404, msj: "Usted no tiene credenciales vigentes" });
+                reject({ cod: 401, msj: "Usted no tiene credenciales vigentes" });
             });
     })
     return resp

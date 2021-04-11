@@ -1,6 +1,5 @@
-const env = require('node-env-file'); // .env file
 const express = require('express') //llamamos a Express
-var bodyParser = require('body-parser'); 
+const env = require('node-env-file'); // .env file
 
 const app = express()
 app.use(express.json({limit: '20mb'}));

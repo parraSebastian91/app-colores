@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   servieUrl: "http://localhost:3000",
   credenciales: {
-    usuario: "sebastian",
+    usuario: "usuario",
     password: "asd123"
   }
 };

@@ -14,13 +14,23 @@ export class AuthService {
     this.credenciales = environment.credenciales;
   }
 
-   createSession(){
-    const resp = new Promise(async (resolve,reject)=>{
+  createSession() {
+    const resp = new Promise(async (resolve, reject) => {
       let token = this.getTokenSession();
-      if(!token){
+      if (!token) {
         token = await this.getToken(this.credenciales).then((t: any) => t.token);
-        localStorage.setItem('TOKEN',token)
+        localStorage.setItem('TOKEN', token)
       }
+      resolve(token)
+    })
+    return resp;
+  }
+
+  createSessionUsuario(Usuario) {
+    const resp = new Promise(async (resolve, reject) => {
+      let token = await this.getToken(Usuario).then((t: any) => t.token);
+      localStorage.removeItem('TOKEN');
+      localStorage.setItem('TOKEN', token);
       resolve(token)
     })
     return resp;

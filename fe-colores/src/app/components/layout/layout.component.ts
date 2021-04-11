@@ -74,12 +74,24 @@ export class LayoutComponent implements OnInit {
 
   mensaje(msj) {
     Swal.fire({
-      title: ((msj.cod===200)?'Operacion Existosa':'Existio un problema en la operacion'),
-      icon: ((msj.cod===200)?'success':'warning'),
+      title: msj.msj,
+      icon: ((msj.cod === 200) ? 'success' : 'warning'),
       confirmButtonText: 'OK!'
     }).then(m => {
       this.getColorList();
     })
+  }
+
+  async setAdministrador() {
+    await this.authService.createSessionUsuario({ usuario: 'administrador', password: 'asd123' }).then(t => {
+      console.log('Session created')
+    });
+  }
+
+  async setUsuario() {
+    await this.authService.createSessionUsuario({ usuario: 'usuario', password: 'asd123' }).then(t => {
+      console.log('Session created')
+    });
   }
 
 }
