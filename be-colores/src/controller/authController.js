@@ -58,12 +58,6 @@ const decodeToken = (token) => {
     return tokenDecode
 }
 
-/**
- * 
- * @param {STRING} nombre 
- * @returns PESONA
- */
-
 const getPersona = (nombre) => {
     const resp = new Promise((resolve, reject) => {
         persona.findOne({ nombre })

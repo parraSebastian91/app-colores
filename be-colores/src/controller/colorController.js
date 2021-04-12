@@ -75,9 +75,9 @@ const getListColores = async ({ limite = 5, pagina = 1, doc = 'json' }) => {
  * @returns Obtiene un documento buscado por el id
  */
 
-const getColorByID = (idItem, limit = 0, skip = 0) => {
+const getColorByID = (idItem) => {
     const resp = new Promise((resolve, reject) => {
-        Color.find({ id: idItem })
+        Color.findOne({ id: idItem })
             .then(t => {
                 resolve(t);
             }).catch(err => {

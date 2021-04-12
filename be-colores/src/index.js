@@ -5,7 +5,6 @@ const coloresRoutes = require('./routes/colorRoutes')
 const coloresMiddleware = require('./middleware/coloresMid')
 const authRoutes = require('./routes/authRoutes')
 
-
 var cors = require('cors');
 
 router.use(cors({
