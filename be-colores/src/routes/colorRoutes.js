@@ -27,6 +27,14 @@ const colorController = require('../controller/colorController');
  *         description: tipo de documento necesario json o xml, por defecto json.
  *         schema:
  *           type: string
+ *       - in: ParameterLocation.Header
+ *         name: JWT Authentication
+ *         description: Enter JWT Bearer token **_only_**.
+ *         schema:
+ *           type: bearer
+ *         BearerFormat: JWT
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Retorna lista e colores

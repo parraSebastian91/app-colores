@@ -5,6 +5,7 @@ const coloresRoutes = require('./routes/colorRoutes')
 const coloresMiddleware = require('./middleware/coloresMid')
 const authRoutes = require('./routes/authRoutes')
 
+
 var cors = require('cors');
 
 router.use(cors({
@@ -13,14 +14,15 @@ router.use(cors({
 
 const swaggerOptions = {
     swaggerDefinition: {
+        openapi: '3.0.0',
         info: {
-            title: "libreria API-Colores",
+            title: "Librería API-Colores",
             version: '1.0.0',
             contact:'Sebastian Parra',
             email: 'parra.sebastian91@gmail.com'
         },
     },
-    apis: ["./src/routes/**.js"],
+    apis: ["./src/config/swagger.yml"],
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
