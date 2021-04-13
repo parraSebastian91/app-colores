@@ -17,7 +17,7 @@ Instalando los entornos de ejecución.
 
 IDE de desarrollo a elección.
 
-###Descarga de repositorios
+### Descarga de repositorios
 A continuación se describirá los pasos a seguir para la instalación de los componentes.
 * Para la instalación del componente Front end, por favor ir al [Repositorio](https://github.com/parraSebastian91/app-colores/tree/desarrollo/fe-colores)
 * Para la instalación del componente Backe end, por favor ir al [Repositorio.](https://github.com/parraSebastian91/app-colores/tree/desarrollo/fe-colores)
