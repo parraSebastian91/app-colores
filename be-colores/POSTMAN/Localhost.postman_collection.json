@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "c6d396b7-9918-4b6a-aa7f-2289d0ec176c",
+		"name": "Localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Colores",
+			"item": [
+				{
+					"name": "getColorByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJjYXRhbGluYSBmdWVudGVzIiwidGlwbyI6IlVTVUFSSU8iLCJpYXQiOjE2MTc5Mjc3ODd9.IUp84WlZGdncKJb_s_6Sd2I5ngvuKkcy1_bgzXKlAYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/colores/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"colores",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setColor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sand Dollar upd 4\",\n    \"color\": \"#aaawsd\",\n    \"pantone\": \"13-1110\",\n    \"year\": \"2022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/colores",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"colores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetListColores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJjYXRhbGluYSBmdWVudGVzIiwidGlwbyI6IlVTVUFSSU8iLCJpYXQiOjE2MTc5Mjc3ODd9.IUp84WlZGdncKJb_s_6Sd2I5ngvuKkcy1_bgzXKlAYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/colores?limite=5&pagina=3&doc=xml",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"colores"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "5"
+								},
+								{
+									"key": "pagina",
+									"value": "3"
+								},
+								{
+									"key": "doc",
+									"value": "xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteColor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJjYXRhbGluYSBmdWVudGVzIiwidGlwbyI6IlVTVUFSSU8iLCJpYXQiOjE2MTc5Mjc3ODd9.IUp84WlZGdncKJb_s_6Sd2I5ngvuKkcy1_bgzXKlAYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/colores/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"colores",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJjYXRhbGluYSBmdWVudGVzIiwidGlwbyI6IlVTVUFSSU8iLCJpYXQiOjE2MTc5Mjc3ODd9.IUp84WlZGdncKJb_s_6Sd2I5ngvuKkcy1_bgzXKlAYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\":\"administrador\",\n    \"password\":\"asd123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/getToken",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"getToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updColor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sand Dollar upd 4\",\n    \"color\": \"#aaawsd\",\n    \"pantone\": \"13-1110\",\n    \"year\": \"2022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/colores/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"colores",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

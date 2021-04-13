@@ -1,27 +1,43 @@
-# FeColores
+# Desafío fe-colores
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+Aplicacion que contiene la interfaz de usuario de la aplicacion. esta funciona en conjunto al proyecto be-colores.
 
-## Development server
+## Construido con 🛠️
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [Node.js v14](https://nodejs.org/dist/latest-v14.x/docs/api/) como entorno de ejecución para JavaScript.
+* [Angular v11](https://angular.io/docs). Como Framewrok de desarrollo front-end.
+* [Material Angular](https://material.angular.io/) como material de diseño de algunos componentes.
 
-## Code scaffolding
+## Comenzando 🚀
+Esta sección describira los pasos a seguir para la instalación del proyecto fe-colores.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Pre-requisitos 📋
+Instalando los entornos de ejecución.
+* Instalación de [Node.js](https://nodejs.org/es/)
 
-## Build
+IDE de desarrollo a elección.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Procedimiento de instalación
 
-## Running unit tests
+* Clonación de [Repositorio ](https://github.com/parraSebastian91/app-colores)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+		git clone https://github.com/parraSebastian91/app-colores.git
 
-## Running end-to-end tests
+* ir a la carpeta del proyecto.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+		cd app-colores/fe-colores
 
-## Further help
+* instalar dependencias.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+		 npm install
+
+* levantar Proyecto.
+
+		npm start
+
+**Se desplegara un servidor de aplicacion, este podra ser revisado en la url http://localhost:4200**
+
+## Autores ✒️
+
+* **Sebastián Parra** - *Desarrollador* - [parraSebastian91 ](https://github.com/parraSebastian91?tab=repositories)
+
