@@ -1,7 +1,7 @@
 {
-    "name": "bff-mercado-libre",
+    "name": "be-colores",
     "version": "1.0.0",
-    "description": "BFF App MercadoLibre",
+    "description": "backend app-colores",
     "main": "index.js",
     "scripts": {
         "start": "nodemon app",
