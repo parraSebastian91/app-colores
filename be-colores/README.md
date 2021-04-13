@@ -15,13 +15,13 @@ Esta sección describira los pasos a seguir para la instalación del proyecto be
 
 ### Pre-requisitos 📋
 Instalando los entornos de ejecución.
-* Instalación de [Node.js](https://nodejs.org/es/)
+* Instalación de [Node.js](https://nodejs.org/es/).
 
 IDE de desarrollo a elección.
 
 ### Procedimiento de instalación
 
-* Clonación de repositorio
+* Clonación de repositorio.
 
 		git clone https://github.com/parraSebastian91/app-colores.git
 
@@ -29,15 +29,15 @@ IDE de desarrollo a elección.
 
 		cd app-colores/be-colores
 
-* instalar dependencias
+* instalar dependencias.
 
 		 npm install
 
-* levantar Proyecto
+* levantar Proyecto.
 
 		npm start
 
-* una ves levantado el proyecto, existira una pagina con la **Documentacion** de los servicios en la ruta http://localhost:3000/api-docs.
+* una ves levantado el proyecto, existirá una página con la **Documentacián** de los servicios en la ruta http://localhost:3000/api-docs.
 
 * **En el proyecto be-colores, existe una carpeta llamada POSTMAN, donde existe un archivo con el set de llamados a la aplicación**
 
