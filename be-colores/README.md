@@ -37,7 +37,9 @@ IDE de desarrollo a elección.
 
 		npm start
 
-**En el proyecto be-colores, existe una carpeta llamada POSTMAN, donde existe un archivo con el set de llamados a la aplicación**
+* una ves levantado el proyecto, existira una pagina con la **Documentacion** de los servicios en la ruta http://localhost:3000/api-docs.
+
+* **En el proyecto be-colores, existe una carpeta llamada POSTMAN, donde existe un archivo con el set de llamados a la aplicación**
 
 ## Autores ✒️
 
