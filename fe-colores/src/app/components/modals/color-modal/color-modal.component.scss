@@ -1,0 +1,25 @@
+mat-form-field {
+    width: 100%;
+}
+.color-piker {
+    margin-bottom: 10px;
+    .lbl-content {
+        margin-bottom: 10px;
+        .label {
+            color: rgba(0, 0, 0, 0.6);
+            font: inherit;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+    }
+}
+
+.acciones {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+

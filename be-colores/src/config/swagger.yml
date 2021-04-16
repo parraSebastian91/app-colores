@@ -1,0 +1,204 @@
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+tags:
+  - name: Autorización
+    description: Autorización de usuario
+  - name: Colores
+    description: Todo relacionado con la gestion de colores
+paths:
+  /auth/getToken:
+    post:
+      summary: obtiene token de autorización.
+      description: obtencion de token de autorización según credenciales de usuarios.
+      tags:
+        - Autorización
+      produces:
+        - "application/json"
+      parameters:
+        - in: body
+          name: Credenciales
+          required: true
+          description: Credenciales de usuario.
+          schema:
+            type: string
+            required:
+              - usuario
+              - password
+            properties:
+              usuario:
+                type: string
+                example: administrador
+              password:
+                type: string
+                example: asd123
+      responses:
+        200:
+          description: Retorna token de autorizacion.
+        401:
+          description: Usted no tiene credenciales vigentes.
+  /colores:
+    get:
+      summary: Obtiene lista de colores.
+      description: Se obtiene una lista de colores ingresados en BD
+      tags:
+        - Colores
+      parameters:
+        - in: query
+          name: limite
+          required: false
+          description: cantidad de items por página.
+          schema:
+            type: integer
+        - in: query
+          name: pagina
+          required: false
+          description: pagina a consultar.
+          schema:
+            type: integer
+        - in: query
+          name: doc
+          required: false
+          description: tipo de documento necesario json o xml, por defecto json.
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Retorna lista de colores
+    post:
+      summary: Creacion de nuevo color.
+      description: Se crea color nuevo en base de datos.
+      tags:
+        - Colores
+      parameters:
+        - in: body
+          name: usuario
+          required: true
+          description: Nombre de usuario.
+          schema:
+            type: string
+            required:
+              - name
+              - color
+              - pantone
+              - year
+            properties:
+              name:
+                type: string
+              color:
+                type: string
+              pantone:
+                type: string
+              year:
+                type: string
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Retorna token de autorizacion.
+        401:
+          description: Usted no tiene credenciales vigentes.
+  /colores/{id}:
+    get:
+      summary: busqueda de color.
+      description: Se obtiene el color segun id.
+      tags:
+        - Colores
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: identificador de color.
+          schema:
+            type: integer
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Retorna lista e colores
+    put:
+      summary: Actualizacion de color.
+      description: Se actualiza comor según id y body request.
+      tags:
+        - Colores
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: identificador de color.
+          schema:
+            type: integer               
+        - in: body
+          name: usuario
+          required: true
+          description: Nombre de usuario.
+          schema:
+            type: string
+            required:
+              - name
+              - color
+              - pantone
+              - year
+            properties:
+              name:
+                type: string
+              color:
+                type: string
+              pantone:
+                type: string
+              year:
+                type: string   
+      security:
+        - bearerAuth: []  
+      responses:
+        200:
+          description: Actualizacion exitosa
+    delete:
+      summary: Eliminación de color.
+      description: Se elimina color de base de datos, segun id.      
+      tags:
+        - Colores
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: identificador de color.
+          schema:
+            type: integer    
+      security:
+        - bearerAuth: []       
+      responses:
+        200:
+          description: Retorna lista e colores
+securityDefinitions:
+  bearerAuth:
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+definitions:
+  Category:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+    xml:
+      name: Category
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+    xml:
+      name: User

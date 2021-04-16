@@ -1,0 +1,14 @@
+<div class="card" [ngStyle]="ngStyle" (mouseover)="isHover(1)" (mouseout)="isOut(1)" [@seleccion]="isSelected" (click)="clickColor()">
+    <div class="cabecera cont-color">
+        <div><span class="year">{{color.year}}</span></div>
+    </div>
+    <div class="content cont-color">
+        <div class="desc-color">
+            <div> <span class="nombre">{{color.name}}</span></div> 
+            <div><span class="hash-color">{{color.color}}</span></div>
+        </div>
+    </div>
+    <div class="footer cont-color">
+        <div><span class="cod-color">{{color.pantone}}</span></div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>{{titulo}}</h2>
+<mat-dialog-content>
+    <div class="fom-content">
+        <form [formGroup]="formColor" (ngSubmit)="guardar()" #colorForm="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre Color</mat-label>
+                <input matInput formControlName="nombreColor" placeholder="Nombre de color">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Pantone</mat-label>
+                <input matInput formControlName="pantone" placeholder="Nombre de color">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Año</mat-label>
+                <input matInput formControlName="year" placeholder="Nombre de color">
+            </mat-form-field>
+            <div class="color-piker">
+                <div class="lbl-content">
+                    <span class="label">Seleccione Color</span>
+                </div>
+                <div class="sel-color-conten">
+                    <color-slider MatFormFieldControl [color]="colorState" (onChangeComplete)="changeComplete($event)"></color-slider>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="acciones">
+        <div>
+            <button mat-mini-fab color="warn" *ngIf="!isNew" (click)="eliminar()">
+                <mat-icon aria-hidden="false" aria-label="Example delete_outline icon">delete_outline</mat-icon>
+            </button>
+        </div>
+        <div>
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button cdkFocusInitial form="ngForm"
+                (click)="colorForm.onSubmit(undefined)">Guardar</button>
+        </div>
+    </div>
+</mat-dialog-actions>
